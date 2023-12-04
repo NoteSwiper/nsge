@@ -8,8 +8,6 @@ plugins {
     id("maven-publish")
     id("eclipse")
     id("idea")
-    id("net.rdrei.android.buildtimetracker") version "0.11.0"
-    id("com.github.ksoichiro.build.info") version "0.2.0"
 }
 
 val lwjglVersion = "3.3.3"
@@ -164,6 +162,12 @@ dependencies {
     implementation("org.lwjglx", "lwjgl3-awt", lwjgl3awtVersion)
     implementation("com.code-disaster.steamworks4j", "steamworks4j", steamworks4jVersion)
     implementation("com.code-disaster.steamworks4j", "steamworks4j-server", steamworks4jserverVersion)
+
+    implementation("org.tinylog:tinylog-api:2.6.2")
+    implementation("org.tinylog:tinylog-impl:2.6.2")
+    implementation("org.tinylog:jcl-tinylog:2.6.2")
+    implementation("org.tinylog:jsl-tinylog:2.6.2")
+    implementation("org.tinylog:jul-tinylog:2.6.2")
 }
 
 tasks {
@@ -172,3 +176,27 @@ tasks {
     }
 }
 
+sourceSets {
+    main {
+        java {
+            srcDir("src/main/java")
+        }
+        resources {
+            srcDir("src/main/resources")
+        }
+    }
+    test {
+        java {
+            srcDir("src/test/java")
+        }
+        resources {
+            srcDir("src/test/resources")
+        }
+    }
+}
+
+idea {
+    module {
+        inheritOutputDirs = true
+    }
+}
