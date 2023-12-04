@@ -1,3 +1,8 @@
+/*
+Gradle Wrapper 8.0 Kotlin DSL
+Created in 2023/12/04 18:39:48
+Auto-Generated using Intellij IDEA 2023.1 #IC-231.8109.175 (Community Edition)
+*/
 plugins {
     id("java")
     id("maven-publish")
@@ -22,40 +27,53 @@ repositories {
 }
 
 dependencies {
+    /* [[ JUnit + JUnit Jupiter ]] */
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 
+    /* [[ Apache Log4j ]] */
     implementation(platform("org.apache.logging.log4j:log4j-bom:2.22.0"))
 
     implementation("org.apache.logging.log4j:log4j-api")
     runtimeOnly("org.apache.logging.log4j:log4j-core")
-    implementation(platform("org.lwjgl:lwjgl-bom:$lwjglVersion"))
 
+    /* [[ Google Guava ]] */
     implementation("com.google.guava:guava:32.1.3-jre")
     implementation("com.google.guava:failureaccess:1.0.2")
 
+    /* [[ Google GSON ]] */
+    implementation("com.google.code.gson:gson:2.10.1")
+
+    /* [[ Electronwill Night Config - YAML + TOML + JSON + HOCON ]] */
     implementation("com.electronwill.night-config:core:3.6.7")
     implementation("com.electronwill.night-config:yaml:3.6.7")
     implementation("com.electronwill.night-config:toml:3.6.7")
     implementation("com.electronwill.night-config:json:3.6.7")
     implementation("com.electronwill.night-config:hocon:3.6.7")
 
+    /* [[ Oshi JSON ]] */
     implementation("com.github.oshi:oshi-core:6.4.8")
     implementation("com.github.oshi:oshi-json:3.13.6")
 
-    implementation("com.google.code.gson:gson:2.10.1")
-
+    /* [[ IBM Icu4j ]] */
     implementation("com.ibm.icu:icu4j:74.1")
 
+    /* [[ Commons-codec + io + logging ]] */
     implementation("commons-codec:commons-codec:1.16.0")
     implementation("commons-io:commons-io:2.15.1")
     implementation("commons-logging:commons-logging:1.3.0")
 
-    implementation("io.github.classgraph:clasgraph:4.8.165")
+    /* [[ Classgraph ]] */
+    implementation("io.github.classgraph:classgraph:4.8.165")
 
+    /* [[ Netty ]] */
     implementation("io.netty:netty-all:4.1.101.Final")
 
+    /* [[ Unimi DSI Fastutil ]] */
     implementation("it.unimi.dsi:fastutil:8.5.12")
+
+    /* [[ LWJGL ]] */
+    implementation(platform("org.lwjgl:lwjgl-bom:$lwjglVersion"))
 
     implementation("org.lwjgl", "lwjgl")
     implementation("org.lwjgl", "lwjgl-assimp")
@@ -148,8 +166,9 @@ dependencies {
     implementation("com.code-disaster.steamworks4j", "steamworks4j-server", steamworks4jserverVersion)
 }
 
-tasks.test {
-    useJUnitPlatform()
+tasks {
+    test {
+        useJUnitPlatform()
+    }
 }
-
 
