@@ -31,6 +31,32 @@ dependencies {
     runtimeOnly("org.apache.logging.log4j:log4j-core")
     implementation(platform("org.lwjgl:lwjgl-bom:$lwjglVersion"))
 
+    implementation("com.google.guava:guava:32.1.3-jre")
+    implementation("com.google.guava:failureaccess:1.0.2")
+
+    implementation("com.electronwill.night-config:core:3.6.7")
+    implementation("com.electronwill.night-config:yaml:3.6.7")
+    implementation("com.electronwill.night-config:toml:3.6.7")
+    implementation("com.electronwill.night-config:json:3.6.7")
+    implementation("com.electronwill.night-config:hocon:3.6.7")
+
+    implementation("com.github.oshi:oshi-core:6.4.8")
+    implementation("com.github.oshi:oshi-json:3.13.6")
+
+    implementation("com.google.code.gson:gson:2.10.1")
+
+    implementation("com.ibm.icu:icu4j:74.1")
+
+    implementation("commons-codec:commons-codec:1.16.0")
+    implementation("commons-io:commons-io:2.15.1")
+    implementation("commons-logging:commons-logging:1.3.0")
+
+    implementation("io.github.classgraph:clasgraph:4.8.165")
+
+    implementation("io.netty:netty-all:4.1.101.Final")
+
+    implementation("it.unimi.dsi:fastutil:8.5.12")
+
     implementation("org.lwjgl", "lwjgl")
     implementation("org.lwjgl", "lwjgl-assimp")
     implementation("org.lwjgl", "lwjgl-bgfx")
